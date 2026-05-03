@@ -17,7 +17,9 @@
 7. 7
 
 ### No Funcionales
-1.El sistema deberá recopilar datos con una periodicidad de 24 horas para garantizar la integridad de la información.
+1. El sistema deberá recopilar datos con una periodicidad de 24 horas.
+2. El sistema debe garantizar que las datos se almacenan de manera segura y no puedan ser modificadas posteriormente por el usuario.
+3. El sistema debe mantener los estandares de accesibilidad y estilo que debe tener una página de la Municipalidad de Santo Domingo.
 
 ## Justificación del Problema y análisis de usuario objetivo
 El problema se basa en la complejidad a la hora de buscar información especifica acerca de las finanzas de la municipalidad, siendo esta confusa y difícil de utilizar para una persona que no este acostumbrada al sistema actual, por lo que se busca mejorar la forma en la que la información es presentada añadiendo elementos gráficos y manteniendo funcionalidades previas, permitiendo exportar datos que el usuario requiera.
