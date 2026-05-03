@@ -12,9 +12,9 @@
 2. El usuario podra filtrar información por categoria.
 3. El usuario podra comparar entre dos años.
 4. El sistema debe transformar los datos procesados en representaciones gráficas de manera automatizada.
-5. El sistema deberá automatizar la recopilación de datos, sin requerir intervención manual.
-6. 6
-7. 7
+5. El sistema debe automatizar la recopilación de datos, sin requerir intervención manual.
+6. El sistema debe ser capaz de poder represantar nueva informacion de nuevas variables que se ingresen (escalabilidad de datos).
+7. EL sistema debe poder comunicarse y compartir informacion con otras plataformas como por ejemplo manejar datos tipo xml o json.
 
 ### No Funcionales
 1. El sistema deberá recopilar datos con una periodicidad de 24 horas.
