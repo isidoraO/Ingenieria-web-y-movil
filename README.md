@@ -100,6 +100,70 @@ La arquitectura implementa protección de rutas (Protected Routes) evaluando el 
 5. Presiona "Guardar y Notificar" retornando a la bandeja principal.
 
 ---
+### Flujo de Datos del Sistema (Arquitectura Lógica)
+#### Diagrama de Contexto (Nivel 0)
+
+```mermaid
+flowchart TD
+    %% Entidades Externas
+    C[Ciudadano]
+    F[Funcionario / Admin]
+
+    %% Sistema Central
+    S((Plataforma de \nAcceso a la Información))
+
+    %% Flujos Ciudadano
+    C -- "Credenciales de acceso" --> S
+    C -- "Formulario de nueva solicitud" --> S
+    S -- "Vistas de UI / Estado de solicitudes" --> C
+    S -- "Documentos de resolución" --> C
+
+    %% Flujos Funcionario
+    F -- "Credenciales de acceso" --> S
+    F -- "Cambios de estado y archivos adjuntos" --> S
+    S -- "Listado de solicitudes ciudadanas" --> F
+    S -- "Métricas y reportes" --> F
+```
+---
+
+#### Diagrama de Flujo de Datos (Nivel 1)
+
+```mermaid
+flowchart LR
+    %% Entidades Externas
+    C[Ciudadano]
+    F[Funcionario / Admin]
+
+    %% Procesos (API RESTful + Backend)
+    P1((1. Autenticación \n y Autorización))
+    P2((2. Gestión de \n Solicitudes))
+    P3((3. Resolución y \n Trámite))
+
+    %% Almacenes de Datos (Base de Datos Relacional)
+    D1[(D1: Usuarios)]
+    D2[(D2: Solicitudes)]
+
+    %% Flujos de Autenticación
+    C -- Datos de Login --> P1
+    F -- Datos de Login --> P1
+    P1 <--> |Validación de \nCredenciales/Token| D1
+    P1 -- Token JWT --> C
+    P1 -- Token JWT --> F
+
+    %% Flujos de Ciudadano (Creación y Lectura)
+    C -- "JSON: Nueva Solicitud \n(POST /api/solicitudes)" --> P2
+    P2 -- "Inserta Registro (SQL)" --> D2
+    D2 -- "Retorna Datos" --> P2
+    P2 -- "Lista de Historial \n(GET /api/solicitudes)" --> C
+
+    %% Flujos de Funcionario (Trámite y Actualización)
+    P3 -- "Consulta Pendientes" --> D2
+    D2 -- "Lista Solicitudes" --> P3
+    P3 -- "Muestra Solicitudes \n(GET /api/admin/gestion)" --> F
+    
+    F -- "JSON: Cambio de Estado + Archivo \n(PUT /api/admin/gestion/:id)" --> P3
+    P3 -- "Actualiza Registro (SQL)" --> D2
+```
 ### Puntos Críticos de Interacción
 * **Validación de Formularios:** Se realiza validación en tiempo real (RUT, formato de correo, contraseñas) para asegurar la integridad de la base de datos relacional.
 
