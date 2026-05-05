@@ -34,22 +34,22 @@ https://www.figma.com/design/7KgyeRm3cqbBRMuQtmwOFZ/Sin-t%C3%ADtulo?node-id=0-1&
 ### Rutas principales y secundarias & Relaciones jerárquicas entre vistas
 
 ```text
-🌐 / (Raíz Pública)
- ├── 🔓 /login                    -> Autenticación de usuarios
- └── 📝 /registro                 -> Creación de cuenta (Validación de RUT y datos)
+ / (Raíz Pública)
+ ├──  /login                    -> Autenticación de usuarios
+ └──  /registro                 -> Creación de cuenta (Validación de RUT y datos)
 
-👤 /app (Área Privada - Rol Ciudadano)
- ├── 🏠 /app/inicio               -> Panel resumen y accesos directos
- ├── 📁 /app/solicitudes          -> Historial de requerimientos
- │    ├── ➕ /app/solicitudes/nueva -> Formulario para ingresar solicitud
- │    └── 📄 /app/solicitudes/:id   -> Detalle de solicitud y respuesta
- └── ⚙️ /app/perfil               -> Configuración de cuenta
+ /app (Área Privada - Rol Ciudadano)
+ ├──  /app/inicio               -> Panel resumen y accesos directos
+ ├──  /app/solicitudes          -> Historial de requerimientos
+ │    ├──  /app/solicitudes/nueva -> Formulario para ingresar solicitud
+ │    └──  /app/solicitudes/:id   -> Detalle de solicitud y respuesta
+ └──  /app/perfil               -> Configuración de cuenta
 
-🛡️ /admin (Área Privada - Rol Funcionario/Admin)
- ├── 📊 /admin/dashboard          -> Métricas globales y volumen de requerimientos
- ├── 📥 /admin/gestion            -> Bandeja de entrada de requerimientos
- │    └── 📝 /admin/gestion/:id     -> Vista de resolución y adjuntos
- └── 👥 /admin/usuarios           -> Mantenedor de cuentas
+ /admin (Área Privada - Rol Funcionario/Admin)
+ ├──  /admin/dashboard          -> Métricas globales y volumen de requerimientos
+ ├──  /admin/gestion            -> Bandeja de entrada de requerimientos
+ │    └──  /admin/gestion/:id     -> Vista de resolución y adjuntos
+ └──  /admin/usuarios           -> Mantenedor de cuentas
 ```
 La aplicación utiliza un sistema de enrutamiento anidado (`react-router`) que refleja la jerarquía de la información, dividida en un área pública y dos áreas privadas separadas por rol.
 
