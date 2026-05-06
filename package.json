@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "@gobdigital-cl/gob.cl": "^3.0.10"
+    "@gobdigital-cl/gob.cl": "^3.0.10",
+    "@ionic/react": "^8.8.5",
+    "@ionic/react-router": "^8.8.5",
+    "ionicons": "^8.0.13"
   }
 }
