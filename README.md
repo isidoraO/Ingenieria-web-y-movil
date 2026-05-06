@@ -27,7 +27,9 @@ El problema se basa en la complejidad a la hora de buscar información especific
 El usuario objetivo es cualquier persona que requiera los datos, estos pueden ser personas que ya tenían experiencia utilizando computadoras y el portal anterior, o personas que nunca han utilizado el portal y cuyo manejo de computadora no es bueno.
 
 ## Mokups
-https://www.figma.com/design/7KgyeRm3cqbBRMuQtmwOFZ/Sin-t%C3%ADtulo?node-id=0-1&t=vAxNeJ8eZeT634Jr-1
+Figma: https://www.figma.com/design/7KgyeRm3cqbBRMuQtmwOFZ/Sin-t%C3%ADtulo?node-id=0-1&t=vAxNeJ8eZeT634Jr-1
+
+Prototipo: https://www.figma.com/proto/7KgyeRm3cqbBRMuQtmwOFZ/Ingenieria-web-y-movil-Proyecto-33-Santo-Domingo?node-id=0-1&t=J0LT4jJa8ZKz1tPX-1
 
 ## Arquitectura de navegación y Experiencia del usuario
 
